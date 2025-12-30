@@ -1,20 +1,13 @@
-public class Teacher {
-    private String name;
+public class Teacher extends Person {
     private String subject;
 
-    public Teacher(String name, String subject) {
-        this.name = name;
+    // Конструктор
+    public Teacher(String name, int id, String subject) {
+        super(name, id);  // Вызов конструктора родительского класса
         this.subject = subject;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    // Геттер и сеттер для subject
     public String getSubject() {
         return subject;
     }
@@ -23,9 +16,10 @@ public class Teacher {
         this.subject = subject;
     }
 
+    // Переопределение метода displayInfo() для учителей
     @Override
-    public String toString() {
-        return "Teacher{name='" + name + "', subject='" + subject + "'}";
+    public void displayInfo() {
+        System.out.println("Teacher - " + toString() + ", Subject: " + subject);
     }
 }
 
